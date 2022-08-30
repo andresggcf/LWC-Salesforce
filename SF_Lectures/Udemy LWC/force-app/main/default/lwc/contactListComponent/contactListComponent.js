@@ -1,7 +1,7 @@
 import { LightningElement, track, wire, api } from 'lwc';
 import getContactList from '@salesforce/apex/ContactListController.getContactList';
 
-const contColumns = [
+const constColumns = [
     { label: 'First Name', fieldName: 'FirstName' },
     { label: 'Last Name', fieldName: 'LastName' },
     { label: 'Title', fieldName: 'Title' },
@@ -10,11 +10,11 @@ const contColumns = [
 export default class ContactListComponent extends LightningElement {
     @api recordId;
     //error;
-    columns = contColumns;
+    columns = constColumns;
     //@track conList;
 
-    @wire (getContactList, {recordId: '$recordId'}) contactList;
-    /*@wire (getContactList, {recordId: '$recordId'}) contactList(data,error){
+    //@wire (getContactList, {recordId: '$recordId'}) contactList;
+    @wire (getContactList, {recordId: '$recordId'}) contactList(data,error){
         if(data){
             this.conList = data;
             console.log("Data: " + data);
@@ -22,5 +22,5 @@ export default class ContactListComponent extends LightningElement {
         else if (error){
             console.log("error: " + error);
         }
-    }*/
+    }
 }
