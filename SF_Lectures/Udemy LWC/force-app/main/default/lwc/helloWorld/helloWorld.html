@@ -1,3 +1,16 @@
+<!-- sldsValidatorIgnore -->
 <template>
-    <div>Hello World, my name is {testName}, Object Name = {testObj.Name}</div>
+    <!-- Lesson 33 Data binding -->
+    <div>Hello World, my name is {testName}, Object Name = {testObj.Name}</div> 
+
+    <!--Lecture 34: two way data binding-->
+
+    <lightning-card  title="Two way data binding">
+        <lightning-input class="slds-m-around_x-small" 
+            type="text" 
+            label="Enter some text" 
+            onkeyup={changeHandler}>
+        </lightning-input>
+        <div>{fullname} is a course of {title}</div>
+    </lightning-card>
 </template>

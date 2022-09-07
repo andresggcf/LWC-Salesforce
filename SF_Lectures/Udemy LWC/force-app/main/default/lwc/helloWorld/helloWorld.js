@@ -16,12 +16,21 @@ export default class HelloWorld extends LightningElement {
     //Defined:
     fullname = 'Salesforce'; //to bind to HTML => <h1>My name is {fullname}</h1>
     userList = ['A', 'B'];
+    title = 'aura'
 
 
 
     //Data binding Demo:
     testName = 'Zero to Hero';
     testObj={
-        Name:"Asdf"
+        Name:'Asdf'
     };
+
+    //Lecture 34: Methods and two way data binding
+
+    //Method:
+    changeHandler(event){ //event is a default object
+        //Change name of title
+        this.title = event.target.value; //target holds a value property of what the user typed in input 
+    }
 }
