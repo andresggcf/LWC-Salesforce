@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title = "Conditional Formatting">
+        <div class ="slds-var-m-around_medium">
+            <lightning-button 
+                variant="brand" 
+                label="ShowData" 
+                title="Primary action" 
+                onclick={handleClick} 
+                class="slds-var-m-left_x-small">
+            </lightning-button>
+            <!--Applying conditional rendering-->
+            <template if:true={isVisible}>
+                <div class="slds-var-m-left_x-small">Welcome to Zero to Hero LWC</div>
+            </template>
+            <template if:false={isVisible}>
+                <div class="slds-var-m-left_x-small">Holi</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -11,6 +11,25 @@
             label="Enter some text" 
             onkeyup={changeHandler}>
         </lightning-input>
-        <div>{fullname} is a course of {title}</div>
+        <div class="slds-m-around_x-small" >{fullname} is a course of {title}</div>
+    </lightning-card>
+
+
+    <!--Lecture 35: Track property-->
+    <lightning-card  title="@track properties">
+        <lightning-input class="slds-m-around_x-small" 
+            type="text" 
+            label="Enter city name" 
+            onkeyup={trackHandler}>
+        </lightning-input>
+        <div class="slds-m-around_x-small" >{address.city} is my city</div>
+    </lightning-card>
+
+    <!--Lecture 36: Getters-->
+    <lightning-card  title="Getter Demo">
+        <div class="slds-m-around_x-small" >
+            <div>First user is: {firstUser}</div>
+            <div>Multiplication: {multiply}</div>
+        </div>
     </lightning-card>
 </template>

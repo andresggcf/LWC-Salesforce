@@ -1,0 +1,80 @@
+<template>
+    <!-- 
+        <template for:each{array} for:item="currentItem" for:index="index">
+            
+        for:each{array}: takes array as input to scan each element.
+        
+        for:item="currentItem" : is the value of the current item. It's
+        an alias that we can define.
+
+        for:index="index" : index is the current element index 
+        in the array.
+    -->
+    <lightning-card title="for:each loop">
+        <div class="slds-var-m-around_medium">
+            <template for:each={carList} for:item="car"> 
+                <div key={car}>{car}</div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <!--
+        To apply a special behavior to the first or last item we should use 
+        iterator over for:each.
+
+        <template iterator:iteratorName = {array}>
+            --Repeatable template--
+        </template>
+
+        iteratorName: is the value of the current element in the loop, It's 
+        an alias that we can define.
+
+        array: is the list array in which we're iterating
+
+        value: The value of the item in the list. This can also be used to 
+        access the properties of the array: iteratorName.value.propertyName
+
+        index: The index of the item in the list: iteratorName.index
+
+        first: a boolean value indicating whether this item is the first item
+        in the list: iteratorName.first
+
+        last: a boolean value indicating whether this item is the last item
+        in the list: iteratorName.last
+    -->
+    <lightning-card title="iterator loop">
+        <div class="slds-var-m-around_medium">
+            <template iterator:ceo={ceoList}> 
+                <div key={ceo.value.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <template if:true={ceo.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>List of Companies</strong>
+                            </div>
+                        </template>
+                        <li class="slds-item">
+                            <strong>{ceo.value.company}:</strong> {ceo.value.name}
+                        </li>
+                        <template if:true={ceo.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>Thanks for reading the list</strong>
+                            </div>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="for:each loop with object">
+        <div class="slds-var-m-around_medium">
+            <template for:each={carList2} for:item="carItem"> 
+                <div key={carItem.Id}>
+                    <strong>{carItem.brand}:</strong> {carItem.name}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+
+</template>
+
