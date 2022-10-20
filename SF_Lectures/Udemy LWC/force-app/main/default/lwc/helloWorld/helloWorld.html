@@ -1,33 +1,38 @@
 <!-- sldsValidatorIgnore -->
 <template>
     <!-- Lesson 33 Data binding -->
-    <div>Hello World, my name is {testName}, Object Name = {testObj.Name}</div> 
-
+    <lightning-card class="slds-m-around_medium">
+        <div class="slds-m-around_medium">Hello World, my name is {testName}, Object Name = {testObj.Name}</div> 
+    </lightning-card>
+    
     <!--Lecture 34: two way data binding-->
 
-    <lightning-card  title="Two way data binding">
-        <lightning-input class="slds-m-around_x-small" 
+    <lightning-card  title="Two way data binding" 
+        class="slds-m-around_medium">
+        <lightning-input class="slds-m-around_medium" 
             type="text" 
             label="Enter some text" 
             onkeyup={changeHandler}>
         </lightning-input>
-        <div class="slds-m-around_x-small" >{fullname} is a course of {title}</div>
+        <div class="slds-m-around_medium" >{fullname} is a course of {title}</div>
     </lightning-card>
 
 
     <!--Lecture 35: Track property-->
-    <lightning-card  title="@track properties">
-        <lightning-input class="slds-m-around_x-small" 
+    <lightning-card  title="@track properties"
+        class="slds-m-around_medium">
+        <lightning-input class="slds-m-around_medium" 
             type="text" 
             label="Enter city name" 
             onkeyup={trackHandler}>
         </lightning-input>
-        <div class="slds-m-around_x-small" >{address.city} is my city</div>
+        <div class="slds-m-around_medium" >{address.city} is my city</div>
     </lightning-card>
 
     <!--Lecture 36: Getters-->
-    <lightning-card  title="Getter Demo">
-        <div class="slds-m-around_x-small" >
+    <lightning-card  title="Getter Demo"
+        class="slds-m-around_medium">
+        <div class="slds-m-around_medium" >
             <div>First user is: {firstUser}</div>
             <div>Multiplication: {multiply}</div>
         </div>

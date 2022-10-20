@@ -10,7 +10,8 @@
         for:index="index" : index is the current element index 
         in the array.
     -->
-    <lightning-card title="for:each loop">
+    <lightning-card title="for:each loop"
+        class="slds-var-m-around_medium">
         <div class="slds-var-m-around_medium">
             <template for:each={carList} for:item="car"> 
                 <div key={car}>{car}</div>
@@ -42,7 +43,8 @@
         last: a boolean value indicating whether this item is the last item
         in the list: iteratorName.last
     -->
-    <lightning-card title="iterator loop">
+    <lightning-card title="iterator loop" 
+        class="slds-var-m-around_medium">
         <div class="slds-var-m-around_medium">
             <template iterator:ceo={ceoList}> 
                 <div key={ceo.value.id}>
@@ -66,7 +68,8 @@
         </div>
     </lightning-card>
 
-    <lightning-card title="for:each loop with object">
+    <lightning-card title="for:each loop with object"
+        class="slds-var-m-around_medium">
         <div class="slds-var-m-around_medium">
             <template for:each={carList2} for:item="carItem"> 
                 <div key={carItem.Id}>

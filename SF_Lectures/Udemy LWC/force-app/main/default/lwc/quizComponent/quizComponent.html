@@ -1,0 +1,52 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card  title="Quiz Compnent">
+        <div class="slds-var-m-around_medium">
+            <template if:true={isSubmitted}>
+                <div class={isTotalScore}> 
+                    You have scored {correctAnswers} out of {quizQuestions.length}
+                </div>
+            </template>
+            <form>
+                <template for:each={quizQuestions} for:item="item">
+                    <div key={item.id} class="slds-var-m-vertical_medium">
+                        <div>
+                            <strong>{item.id}: </strong>{item.question}
+                        </div>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-var-m-bottom_medium">
+                                <input type="radio" name={item.id} value="a" onchange={clickHandler}/>
+                                <strong> a. </strong>{item.answers.a}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={item.id} value="b" onchange={clickHandler}/>
+                                <strong> b. </strong>{item.answers.b}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={item.id} value="c" onchange={clickHandler}/>
+                                <strong> c. </strong>{item.answers.c}
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <lightning-button 
+                    variant="brand" 
+                    type="submit" 
+                    label="Submit"
+                    title="Submit Quiz"
+                    onclick={submitHandler}
+                    disabled={allNotSelected}
+                    class="slds-var-m-around_small">
+                </lightning-button>
+                <lightning-button 
+                    variant="destructive-text" 
+                    type="reset" 
+                    label="Reset"
+                    title="Reset Quiz"
+                    onclick={resetHandler}
+                    class="slds-var-m-around_small">
+                </lightning-button>
+            </form>
+        </div>
+    </lightning-card>
+</template>
